@@ -23,7 +23,7 @@ public class TC_Login {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		Assert.assertEquals(driver.getTitle(), "OrangeHRM");
-		driver.close();
+		driver.quit();
 	}
 	
 
