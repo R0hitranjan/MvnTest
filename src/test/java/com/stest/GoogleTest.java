@@ -1,5 +1,8 @@
 package com.stest;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -7,9 +10,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 public class GoogleTest {
 	
@@ -28,24 +30,37 @@ public class GoogleTest {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, groups = "meta_Title")
 	public void googleTitleTest() {
 		String title = driver.getTitle();
-		System.out.println(title);
-		Assert.assertEquals(title, "Google");
+		Assert.assertEquals(title, "Google", "Error message - title does not match");
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups = "Page_Content")
 	public void googleLogoTest() {
-		Assert.assertTrue(driver.findElement(By.id("hplogo")).isDisplayed());
-		String imageTitle = driver.findElement(By.id("hplogo")).getAttribute("title");
-		System.out.println(imageTitle);
+		Assert.assertTrue(driver.findElement(By.cssSelector("img[class='lnXdpd']")).isDisplayed());
+		//String imageTitle = driver.findElement(By.id("hplogo")).getAttribute("title");
+		//System.out.println(imageTitle);
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, groups = "Page_Content")
 	public void gmailButtonTest() {
 		Assert.assertTrue(driver.findElement(By.linkText("Gmail")).isDisplayed());
 		
+	}
+	
+	@Test(priority= 4, groups = "printTest")
+	public void test1() {
+		System.out.println("test_1");
+	}
+	@Test(priority= 5, groups = "printTest")
+	public void test2() {
+		System.out.println("test_2");
+	}
+	
+	@Test(priority= 6, groups = "printTest")
+	public void test3() {
+		System.out.println("test_3");
 	}
 
 	

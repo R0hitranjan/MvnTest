@@ -3,11 +3,19 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.stest.TC_Login">
+      <class name="com.stest.GoogleTest">
         <methods>
+          <include name="googleTitleTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.stest.GoogleTest -->
+      <class name="com.stest.TestNgReatures">
+        <methods>
+          <include name="homePageTest"/>
           <include name="loginTest"/>
         </methods>
-      </class> <!-- com.stest.TC_Login -->
+      </class> <!-- com.stest.TestNgReatures -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

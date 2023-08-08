@@ -3,8 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="com.stest.TestNgReatures"/>
       <class name="com.stest.TC_Login"/>
       <class name="com.stest.AppTest"/>
+      <class name="com.stest.GoogleTest"/>
+      <class name="com.stest.TestNgBasics"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
